@@ -1,0 +1,10 @@
+FROM apache/airflow:latest
+
+# Copy requirements if you have any additional
+COPY requirements.txt .
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set environment variables
+ENV AIRFLOW_HOME=/opt/airflow
