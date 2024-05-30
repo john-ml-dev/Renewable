@@ -21,6 +21,6 @@ def extract_transform(file_path, output_path):
     date_partitions = df.groupby(pd.Grouper(freq='Y'))
     for date, partition_df in date_partitions:
     # Generate filename for CSV file
-        filename = f"{output_path}partition_{date.strftime('%Y')}.csv"
+        filename = f"{output_path}/partition_{date.strftime('%Y')}.csv"
         # Write partition_df to CSV
         partition_df.to_csv(filename, index=False)
